@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Cricketer extends React.Component{
+class Abcd extends React.Component{
   constructor(props){
     super(props)
-    this.player={name:"Rohit Kohli", age:34}
+    this.state={
+      Name:"Kohli",
+      Age:34,
+      Level:"Expert"
+    }
+  }
+  change=()=>{
+    this.setState({Level:"GOAT"});
   }
   render(){
-    return <h1>The name of the player is {this.player.name} and he is {this.player.age} years old and has scored {this.props.buns.runs} in his life</h1>
+    return(
+      <div>
+        <button onClick={this.change} type="button">Click to reveal true Level</button>
+        <p>{this.state.Name} is a very good player.</p>
+        <p>He is {this.state.Age} years old.</p>
+        <p>He is an {this.state.Level} batsman.</p>
+      </div>
+    )
+      
   }
 }
-
-class Runs extends React.Component{
-  render(){
-    const obj={runs:23233,name:"Sandulkar"}
-    return (<div>
-    <p>The 2nd most popular Sport:</p>
-    <Cricketer buns={obj}/>
-    </div>)
-  }
-}
-ReactDOM.render(<Runs/>, document.getElementById("root"))
+ReactDOM.render(<Abcd/>, document.getElementById("root"));
