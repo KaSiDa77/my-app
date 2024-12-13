@@ -1,28 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Abcd extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-      Name:"Kohli",
-      Age:34,
-      Level:"Expert"
-    }
-  }
-  change=()=>{
-    this.setState({Level:"GOAT"});
-  }
+/*class Inline extends React.Component{
   render(){
-    return(
-      <div>
-        <button onClick={this.change} type="button">Click to reveal true Level</button>
-        <p>{this.state.Name} is a very good player.</p>
-        <p>He is {this.state.Age} years old.</p>
-        <p>He is an {this.state.Level} batsman.</p>
-      </div>
-    )
-      
+    const style1={
+      fontFamily:"Arial",
+      backgroundColor:"Green",
+      color:"Blue"
+    }
+    const style2={
+      fontFamily:"Times New Roman",
+      backgroundColor:"Grey",
+      color:"Yellow"
+    }
+  return(
+    <div>
+      <h1 style={style1}>HEllO.</h1>
+      <h2 style={style2}>WHAT are You doinG?</h2>
+    </div>
+  )
   }
 }
-ReactDOM.render(<Abcd/>, document.getElementById("root"));
+
+ReactDOM.render(<Inline/>, document.getElementById("root"))*/
+import './index.css'
+
+
+class Style extends React.Component{
+render(){
+  return(
+    <div>
+      <h1 className='one'>Number One</h1>
+      <h2 className='two'>Style Two</h2>
+    </div>
+  )
+}
+}
+ReactDOM.render(<Style/>, document.getElementById("root"))
